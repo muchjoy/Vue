@@ -1,19 +1,27 @@
 <template>
   <div id="home">
-    <!-- <h1>首页</h1> -->
     <nav-bar class="home-nav">
       <div slot="center">购物街</div>
     </nav-bar>
+    <!-- 轮播图 -->
+    <home-swiper :banners="banners"></home-swiper>
+    <!-- 导航 -->
+    <recommend-views :recommends="recommends"></recommend-views>
   </div>
 </template>
 
 <script>
 import NavBar from "common/navbar/NavBar";
+import HomeSwiper from "./homechild/HomeSwiper";
+import RecommendViews from "./homechild/RecommendViews";
+
 import { getHome } from "network/home";
 export default {
   name: "home",
   components: {
     NavBar,
+    HomeSwiper,
+    RecommendViews,
   },
   data() {
     return {
