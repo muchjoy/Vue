@@ -7,6 +7,8 @@
     <home-swiper :banners="banners"></home-swiper>
     <!-- 导航 -->
     <recommend-views :recommends="recommends"></recommend-views>
+    <!-- 本周流行 -->
+    <feature-view></feature-view>
   </div>
 </template>
 
@@ -14,6 +16,7 @@
 import NavBar from "common/navbar/NavBar";
 import HomeSwiper from "./homechild/HomeSwiper";
 import RecommendViews from "./homechild/RecommendViews";
+import FeatureView from "./homechild/FeatureView";
 
 import { getHome } from "network/home";
 export default {
@@ -22,6 +25,7 @@ export default {
     NavBar,
     HomeSwiper,
     RecommendViews,
+    FeatureView,
   },
   data() {
     return {
@@ -41,8 +45,16 @@ export default {
 </script>
 
 <style>
+#home {
+  padding-top: 44px;
+}
 .home-nav {
   background: var(--color-tint);
   color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 </style>
